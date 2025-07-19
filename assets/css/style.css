@@ -1,0 +1,13 @@
+canvas {
+    background-color: white;
+    border-color: gray;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    box-shadow: 0;
+}
+.shader {
+    min-height: 100px;
+    max-height: 50px;
+    height: fit-content;
+}

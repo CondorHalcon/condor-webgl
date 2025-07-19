@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Learn WebGL</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="src/script.js" type="module"></script>
+    </head>
+    <body>
+        <header>
+            <h1>WriteGL</h1>
+            <p>by <strong>CondorHalcon</strong></p>
+        </header>
+        <main>
+            <canvas id="webgl-canvas" width="400" height="300">Please use a browser that supports "canvas"</canvas>
+            <form>
+                <div>
+                    <label for="vert-shader">Vertex Shader</label>
+                    <textarea id="vert-shader" class="shader" name="vert-shader" row="16" cols="50">
+attribute vec4 a_position;
+
+void main() {
+    gl_Position = a_position;
+}</textarea>
+                </div>
+                <div>
+                    <label for="frag-shader">Fragment Shader</label>
+                    <textarea id="frag-shader" class="shader" name="frag-shader" row="16" cols="50">
+precision mediump float;
+
+void main() {
+    gl_FragColor = vec4(1.0, 0.0, 0.5, 1.0);
+}</textarea>
+                </div>
+                <button>Submit</button>
+            </form>
+        </main>
+        <footer></footer>
+    </body>
+</html>

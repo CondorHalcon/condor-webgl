@@ -15,22 +15,24 @@
             <canvas id="webgl-canvas" width="400" height="300">Please use a browser that supports "canvas"</canvas>
             <form>
                 <div>
-                    <label for="vert-shader">Vertex Shader</label>
-                    <textarea id="vert-shader" class="shader" name="vert-shader" row="16" cols="50">
-attribute vec4 a_position;
-
-void main() {
-    gl_Position = a_position;
-}</textarea>
-                </div>
-                <div>
-                    <label for="frag-shader">Fragment Shader</label>
-                    <textarea id="frag-shader" class="shader" name="frag-shader" row="16" cols="50">
-precision mediump float;
-
-void main() {
-    gl_FragColor = vec4(1.0, 0.0, 0.5, 1.0);
-}</textarea>
+                    <div class="shader">
+                        <label for="vert-shader">Vertex Shader</label>
+                        <textarea id="vert-shader" class="shader-input" name="vert-shader" row="16" cols="50">
+    attribute vec4 a_position;
+    
+    void main() {
+        gl_Position = a_position;
+    }</textarea>
+                    </div>
+                    <div class="shader">
+                        <label for="frag-shader">Fragment Shader</label>
+                        <textarea id="frag-shader" class="shader-input" name="frag-shader" row="16" cols="50">
+    precision mediump float;
+    
+    void main() {
+        gl_FragColor = vec4(1.0, 0.0, 0.5, 1.0);
+    }</textarea>
+                    </div>
                 </div>
                 <button>Submit</button>
             </form>

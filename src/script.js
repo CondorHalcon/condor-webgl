@@ -24,9 +24,13 @@ var positionAttributeLocation = gl.getAttribLocation(program, "a_position");
 var positionBuffer = gl.createBuffer();
 gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 var positions = [
-  0, 0,
-  0, 0.5,
-  0.7, 0
+  -1, -1,
+  -1, 1,
+  1, -1,
+
+  -1, 1,
+  1, 1,
+  1, -1
 ];
 // Bind the position buffer.
 gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
@@ -42,5 +46,5 @@ gl.vertexAttribPointer(positionAttributeLocation, size, type, normalize, stride,
 // Draw call
 var primitiveType = gl.TRIANGLES;
 var offset = 0;
-var count = 3;
+var count = 6;
 gl.drawArrays(primitiveType, offset, count);

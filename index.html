@@ -18,20 +18,25 @@
                     <div class="shader">
                         <label for="vert-shader">Vertex Shader</label>
                         <textarea id="vert-shader" class="shader-input" name="vert-shader" row="16" cols="50">
-    attribute vec4 a_position;
-    
-    void main() {
-        gl_Position = a_position;
-    }</textarea>
+attribute vec4 a_position;
+
+varying vec2 vUV;
+
+void main() {
+    vUV = (a_position.xy + 1.0) * .5;
+    gl_Position = a_position;
+}</textarea>
                     </div>
                     <div class="shader">
                         <label for="frag-shader">Fragment Shader</label>
                         <textarea id="frag-shader" class="shader-input" name="frag-shader" row="16" cols="50">
-    precision mediump float;
-    
-    void main() {
-        gl_FragColor = vec4(1.0, 0.0, 0.5, 1.0);
-    }</textarea>
+precision mediump float;
+
+varying vec2 vUV;
+
+void main() {
+    gl_FragColor = vec4(vUV, 0.0, 1.0);
+}</textarea>
                     </div>
                 </div>
                 <button>Submit</button>
